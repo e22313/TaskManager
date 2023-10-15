@@ -4,14 +4,13 @@ const connectDB = require('./db/connect');
 require('dotenv').config();
 
 const app = express();
-// middleware
 
+// middleware
 app.use(express.json());
+app.use(express.static('./public'))
 
 // routes
-
 app.use('/api/v1/tasks', tasks);
-
 
 const port = process.env.PORT || 5000;
 
